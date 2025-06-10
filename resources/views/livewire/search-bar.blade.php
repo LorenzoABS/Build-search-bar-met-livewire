@@ -1,19 +1,17 @@
 <div id="search-bar">
     <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <input wire:model.live="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
    </form>
+   @if(sizeof($users) > 0)
    <div class="dropdown-menu d-block py-0">
+    @foreach($uaers as $user)
     <div class="px-3 py-1 border-bottom">
         <div class="d-flex flex-column ml-3">
-            <span>Name</span>
-            <small>@email</small>
+            <span>{{ $user->name }}</span>
+            <small>{{ $user->email }}</small>
         </div>
     </div>
-    <div class="px-3 py-1">
-        <div class="d-flex flex-column ml-3">
-            <span>Name</span>
-            <small>@email</small>
-        </div>
+    @endforeach
+ </div>
+    @endif
     </div>
-   </div>
-</div>
