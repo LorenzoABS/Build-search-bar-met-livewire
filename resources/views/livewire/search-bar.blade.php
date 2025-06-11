@@ -4,7 +4,7 @@
    </form>
    @if(sizeof($users) > 0)
    <div class="dropdown-menu d-block py-0">
-    @foreach($uaers as $user)
+    @foreach($users as $user)
     <div class="px-3 py-1 border-bottom">
         <div class="d-flex flex-column ml-3">
             <span>{{ $user->name }}</span>
